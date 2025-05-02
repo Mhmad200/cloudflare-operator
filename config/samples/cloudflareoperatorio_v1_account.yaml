@@ -1,0 +1,19 @@
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: api-token-sample
+  namespace: cloudflare-operator-system
+type: Opaque
+stringData:
+  apiToken: ${CF_API_TOKEN}
+---
+apiVersion: cloudflare-operator.io/v1
+kind: Account
+metadata:
+  name: account-sample
+spec:
+  apiToken:
+    secretRef:
+      name: api-token-sample
+      namespace: cloudflare-operator-system

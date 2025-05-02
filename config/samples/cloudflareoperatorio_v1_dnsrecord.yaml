@@ -1,0 +1,25 @@
+---
+apiVersion: cloudflare-operator.io/v1
+kind: DNSRecord
+metadata:
+  name: dnsrecord-sample
+  namespace: cloudflare-operator-system
+spec:
+  name: containeroo-test.org
+  content: 9.9.9.9
+  type: A
+  proxied: false
+  ttl: 1
+---
+apiVersion: cloudflare-operator.io/v1
+kind: DNSRecord
+metadata:
+  name: dnsrecord-ip-ref-sample
+  namespace: cloudflare-operator-system
+spec:
+  name: containeroo-test.org
+  type: A
+  ipRef:
+    name: ip-sample
+  proxied: false
+  ttl: 1

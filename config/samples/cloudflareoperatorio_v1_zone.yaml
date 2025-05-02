@@ -1,0 +1,8 @@
+---
+apiVersion: cloudflare-operator.io/v1
+kind: Zone
+metadata:
+  name: zone-sample
+spec:
+  name: containeroo-test.org
+  prune: false
